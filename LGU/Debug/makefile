@@ -73,7 +73,7 @@ ORDERED_OBJS += \
 "../halcogen_sources/sys_link.cmd" \
 $(GEN_CMDS__FLAG) \
 -lrtsv7R4_T_le_v3D16_eabi.lib \
--l"C:/Projects/rLoop/workspace_ccs/LGU/fapi_includes/F021_API_CortexR4_LE_V3D16.lib" \
+-l"C:/Projects/rLoop/rPod_LGU_Firmware/LGU/fapi_includes/F021_API_CortexR4_LE_V3D16.lib" \
 
 -include ../makefile.init
 
@@ -216,7 +216,7 @@ main-build: LGU.out secondary-outputs
 LGU.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"C:/ProgramFiles/ti_ccs/ccsv6/tools/compiler/arm_15.12.3.LTS/bin/armcl" -mv7R4 --code_state=32 --float_support=VFPv3D16 -me -Ooff --opt_for_speed=5 -g --c99 --c++03 --diag_wrap=off --diag_warning=225 --display_error_number --abi=eabi --enum_type=packed -z -m"LGU.map" --stack_size=0x800 --heap_size=0x800 -i"C:/ProgramFiles/ti_ccs/ccsv6/tools/compiler/arm_15.12.3.LTS/lib" -i"C:/ProgramFiles/ti_ccs/ccsv6/tools/compiler/arm_15.12.3.LTS/include" --reread_libs --diag_wrap=off --warn_sections --display_error_number --xml_link_info="LGU_linkInfo.xml" --rom_model -o "LGU.out" $(ORDERED_OBJS)
+	"C:/ProgramFiles/ti_ccs/ccsv6/tools/compiler/arm_15.12.3.LTS/bin/armcl" -mv7R4 --code_state=32 --float_support=VFPv3D16 -me -Ooff --opt_for_speed=5 -g --c99 --c++03 --diag_wrap=off --diag_warning=225 --display_error_number --enum_type=packed --abi=eabi -z -m"LGU.map" --stack_size=0x800 --heap_size=0x800 -i"C:/ProgramFiles/ti_ccs/ccsv6/tools/compiler/arm_15.12.3.LTS/lib" -i"C:/ProgramFiles/ti_ccs/ccsv6/tools/compiler/arm_15.12.3.LTS/include" --reread_libs --display_error_number --warn_sections --diag_wrap=off --xml_link_info="LGU_linkInfo.xml" --rom_model -o "LGU.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
