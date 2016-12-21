@@ -25,3 +25,6 @@
 # Debug files
 *.dSYM/
 *.su
+
+.metadata
+workspace/.metadata/*
